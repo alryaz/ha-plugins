@@ -49,7 +49,7 @@ class CommandHandler(object):
         verb = command.get('command')
         number_unknown_type = command.get('number')
         number = str(number_unknown_type) if number_unknown_type is not None else None
-        match command['command']:
+        match verb:
             case 'call_service' | None:
                 domain = command.get('domain')
                 service = command.get('service')
