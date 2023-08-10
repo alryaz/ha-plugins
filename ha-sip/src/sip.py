@@ -17,17 +17,21 @@ class MyEndpointConfig(object):
         self.transport = transport
 
 
-def resolve_transport(transport: str | int | None) -> int:
+def resolve_transport(transport: str | int | None = None) -> int:
     # Return transport if a digit is provided
     if isinstance(transport, int):
         return transport
 
-    # Return unspecified transport if none selected
+    # Return unspecified transport if none provided
     if transport is None:
         return pj.PJSIP_TRANSPORT_UNSPECIFIED
 
-    # Check if provided transport is a string consisting of digits
+    # Return unspecified transport if empty provided
     transport = str(transport).strip()
+    if not transport:
+        return pj.PJSIP_TRANSPORT_UNSPECIFIED
+
+    # Check if provided transport is a string consisting of digits
     if transport.isdigit():
         return int(transport)
 
