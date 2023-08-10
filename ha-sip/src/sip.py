@@ -4,10 +4,17 @@ from log import log
 
 
 class MyEndpointConfig(object):
-    def __init__(self, port: int, log_level: int, name_server: list[str]):
+    def __init__(
+        self,
+        port: int,
+        log_level: int,
+        name_server: list[str],
+        transport: int = pj.PJSIP_TRANSPORT_UNSPECIFIED,
+    ) -> None:
         self.port = port
         self.log_level = log_level
         self.name_server = name_server
+        self.transport = transport
 
 
 def create_endpoint(config: MyEndpointConfig) -> pj.Endpoint:
@@ -28,6 +35,6 @@ def create_endpoint(config: MyEndpointConfig) -> pj.Endpoint:
     end_point.audDevManager().setNullDev()
     sip_tp_config = pj.TransportConfig()
     sip_tp_config.port = config.port
-    end_point.transportCreate(pj.PJSIP_TRANSPORT_UDP, sip_tp_config)
+    end_point.transportCreate(config.transport, sip_tp_config)
     end_point.libStart()
     return end_point
