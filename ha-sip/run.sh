@@ -15,6 +15,7 @@ sed -i -- 's~\$SIP1_PASSWORD~'"$(bashio::config 'sip.password')"'~g' /ha-sip/con
 sed -i -- 's~\$SIP1_ANSWER_MODE~'"$(bashio::config 'sip.answer_mode')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP1_SETTLE_TIME~'"$(bashio::config 'sip.settle_time')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP1_INCOMING_CALL_FILE~'"$(bashio::config 'sip.incoming_call_file')"'~g' /ha-sip/config.py
+sed -i -- 's~\$SIP1_TRANSPORT~'"$(bashio::config 'sip.transport')"'~g' /ha-sip/config.py
 
 sed -i -- 's~\$SIP2_ENABLED~'"$(bashio::config 'sip_2.enabled')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP2_ID_URI~'"$(bashio::config 'sip_2.id_uri')"'~g' /ha-sip/config.py
@@ -25,6 +26,7 @@ sed -i -- 's~\$SIP2_PASSWORD~'"$(bashio::config 'sip_2.password')"'~g' /ha-sip/c
 sed -i -- 's~\$SIP2_ANSWER_MODE~'"$(bashio::config 'sip_2.answer_mode')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP2_SETTLE_TIME~'"$(bashio::config 'sip_2.settle_time')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP2_INCOMING_CALL_FILE~'"$(bashio::config 'sip_2.incoming_call_file')"'~g' /ha-sip/config.py
+sed -i -- 's~\$SIP2_TRANSPORT~'"$(bashio::config 'sip_2.transport')"'~g' /ha-sip/config.py
 
 sed -i -- 's~\$SIP3_ENABLED~'"$(bashio::config 'sip_3.enabled')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP3_ID_URI~'"$(bashio::config 'sip_3.id_uri')"'~g' /ha-sip/config.py
@@ -35,6 +37,7 @@ sed -i -- 's~\$SIP3_PASSWORD~'"$(bashio::config 'sip_3.password')"'~g' /ha-sip/c
 sed -i -- 's~\$SIP3_ANSWER_MODE~'"$(bashio::config 'sip_3.answer_mode')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP3_SETTLE_TIME~'"$(bashio::config 'sip_3.settle_time')"'~g' /ha-sip/config.py
 sed -i -- 's~\$SIP3_INCOMING_CALL_FILE~'"$(bashio::config 'sip_3.incoming_call_file')"'~g' /ha-sip/config.py
+sed -i -- 's~\$SIP3_TRANSPORT~'"$(bashio::config 'sip_3.transport')"'~g' /ha-sip/config.py
 
 sed -i -- 's~\$TTS_PLATFORM~'"$(bashio::config 'tts.platform')"'~g' /ha-sip/config.py
 sed -i -- 's~\$TTS_LANGUAGE~'"$(bashio::config 'tts.language')"'~g' /ha-sip/config.py
