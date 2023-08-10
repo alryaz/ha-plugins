@@ -30,7 +30,8 @@
             "password": "secure",
             "answer_mode": "listen",
             "settle_time": 1,
-            "incoming_call_file": ""
+            "incoming_call_file": "",
+            "transport": "udp"
         },
         "sip_2": {
             "enabled": false,
@@ -41,7 +42,8 @@
             "password": "secret",
             "answer_mode": "listen",
             "settle_time": 1,
-            "incoming_call_file": ""
+            "incoming_call_file": "",
+            "transport": "udp"
         },
         "sip_3": {
             "enabled": false,
@@ -52,7 +54,8 @@
             "password": "",
             "answer_mode": "listen",
             "settle_time": 1,
-            "incoming_call_file": ""
+            "incoming_call_file": "",
+            "transport": "udp"
         },
         "tts": {
             "platform": "google_translate",
@@ -77,7 +80,8 @@
             "password": "str",
             "answer_mode": "list(listen|accept)",
             "settle_time": "float",
-            "incoming_call_file": "str"
+            "incoming_call_file": "str",
+            "transport": "list(tcp|udp)"
         },
         "sip_2": {
             "enabled": "bool",
@@ -88,7 +92,8 @@
             "password": "str",
             "answer_mode": "list(listen|accept)",
             "settle_time": "float",
-            "incoming_call_file": "str"
+            "incoming_call_file": "str",
+            "transport": "list(tcp|udp)"
         },
         "sip_3": {
             "enabled": "bool",
@@ -99,7 +104,8 @@
             "password": "str",
             "answer_mode": "list(listen|accept)",
             "settle_time": "float",
-            "incoming_call_file": "str"
+            "incoming_call_file": "str",
+            "transport": "list(tcp|udp)"
         },
         "tts": {
             "platform": "str",
