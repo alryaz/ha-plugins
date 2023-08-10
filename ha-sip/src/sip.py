@@ -17,6 +17,27 @@ class MyEndpointConfig(object):
         self.transport = transport
 
 
+def resolve_transport(transport: str | int | None) -> int:
+    # Return transport if a digit is provided
+    if isinstance(transport, int):
+        return transport
+
+    # Return unspecified transport if none selected
+    if transport is None:
+        return pj.PJSIP_TRANSPORT_UNSPECIFIED
+
+    # Check if provided transport is a string consisting of digits
+    transport = str(transport).strip()
+    if transport.isdigit():
+        return int(transport)
+
+    try:
+        # Attempt to retrieve constant from library by name
+        return getattr(pj, "PJSIP_TRANSPORT_" + transport.upper())
+    except AttributeError:
+        raise ValueError("invalid transport type provided")
+
+
 def create_endpoint(config: MyEndpointConfig) -> pj.Endpoint:
     ep_cfg = pj.EpConfig()
     ep_cfg.uaConfig.threadCnt = 0
